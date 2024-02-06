@@ -1,5 +1,7 @@
 package basics;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -21,11 +23,11 @@ public class TestGoogleSearch {
 		WebElement B=driver.findElement(By.id("twotabsearchtextbox"));
 		B.sendKeys("smart phone"+ Keys.ENTER);
 		
-		//List<WebElement> LinkElements=driver.findElements(By.tagName("a"));
-		//for( WebElement link:LinkElements) {
-			//System.out.println(link);
+		List<WebElement> LinkElements=driver.findElements(By.tagName("a"));
+		for( WebElement link:LinkElements) {
+	    System.out.println(link);
 			
-		//}
+		}
 	String	crnturl=driver.getCurrentUrl();
     System.out.println(crnturl);
 	}

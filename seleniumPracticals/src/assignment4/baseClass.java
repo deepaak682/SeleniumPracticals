@@ -1,6 +1,7 @@
 package assignment4;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +42,12 @@ public class baseClass implements MethodsInterface
 		categorybtn.click();
 		WebElement dropdown=driver.findElement(By.xpath("//select[@id='SearchPublishedId']"));
 		Select select=new Select (dropdown);	
+		List<WebElement> lst=select.getOptions();
+		for(WebElement elements:lst) {
+			System.out.println("options are...."+ elements.getText());
+		}
 		select.selectByIndex(1);
+		System.out.println("option present in index 1 is..." +select.getFirstSelectedOption().getText());
 		WebElement search=driver.findElement(By.xpath("//button[@id='search-categories']"));
 		search.click();
 		WebElement checkbox=driver.findElement(By.xpath("//div[@class='dataTables_scrollHeadInner']//input[@type='checkbox']"));

@@ -18,6 +18,7 @@ public class DropdownTesting {
 		WebElement dropdown=driver.findElement(By.xpath("//select[@id='oldSelectMenu']"));
 		Select select=new Select(dropdown);
 		List<WebElement> lst=select.getOptions();
+	
 		System.out.println(lst);
 		for(WebElement elements:lst) {
 			System.out.println(elements.getText());
@@ -25,9 +26,9 @@ public class DropdownTesting {
 		System.out.println("INDEX VALUE IS" );
 		select.selectByIndex(3);
 	    //select.getFirstSelectedOption().getText();
-	    System.out.println(select.getFirstSelectedOption());
+	    System.out.println(select.getFirstSelectedOption().getText());
 	    select.selectByVisibleText("Red");
-	    System.out.print(select.getFirstSelectedOption());
+	    System.out.print(select.getFirstSelectedOption().getText());
 	    
 	
 		
