@@ -60,12 +60,14 @@ public class baseClass implements MethodsInterface
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 		WebElement logout=driver.findElement(By.xpath("//a[normalize-space()='Logout']"));
 	    logout.click();
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 		
 		
 	}
 
 	@Override
 	public void teardown() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 		driver.close();
 		
 	}
